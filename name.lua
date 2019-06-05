@@ -1,4 +1,6 @@
 -- utf8: https://www.utf8-chartable.de/unicode-utf8-table.pl?start=19968&number=128&utf8=0x&htmlent=1
+require "bit"
+local string_byte = string.byte
 local function get_unicode_value(first_byte, second_byte, third_byte)
     local f = bit.lshift(bit.band(first_byte, 0x0F), 12)
     local s = bit.lshift(bit.band(second_byte, 0x3F), 6)
